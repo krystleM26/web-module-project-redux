@@ -27,7 +27,7 @@ const App = props => {
         
           <Switch>
             <Route exact path="/movies/add">
-              <AddMovieForm />
+              <AddMovieForm  onclick={() => {}}/>
             </Route>
 
             <Route path="/movies/:id">
