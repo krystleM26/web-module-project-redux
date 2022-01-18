@@ -6,7 +6,7 @@ import MovieListItem from './MovieListItem';
 import MovieFooter from './MovieFooter';
 
 const MovieList = (props)=> {
-    const movies = [];
+    const {movies} = props;
 
     return (
         <div className="col">
@@ -23,7 +23,7 @@ const MovieList = (props)=> {
 
                 <tbody>
                     {
-                        movies.map(movie=><MovieListItem key={movie.id} movie={state.movie}/>)
+                        movies.map(movie=><MovieListItem key={movie.id} movie={movie}/>)
                     }
                 </tbody>
             </table>
@@ -40,4 +40,4 @@ const mapStateToProps = (state) => {
 
 }
 
-export default connect(mapStateToProps) (MovieList);
+export default connect(mapStateToProps,{})(MovieList);
