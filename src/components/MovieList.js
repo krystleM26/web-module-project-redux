@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import movieReducer from '../reducers';
+
 
 
 import MovieListItem from './MovieListItem';
@@ -36,9 +36,9 @@ const MovieList = (props)=> {
 
 const mapStateToProps = (state) => {
     return {
-        movies: state.movies
+        movies: state.movieReducer.movies
     }
 
 }
 
-export default connect(mapStateToProps,{})(MovieList);
+export default connect(mapStateToProps)(MovieList);
