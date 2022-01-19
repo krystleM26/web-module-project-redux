@@ -27,7 +27,7 @@ const AddMovieForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        addMovie(movie);
+        props.addMovie(movie);
         push('/movies')
     }
 
@@ -80,4 +80,4 @@ const mapStateToProps= (state)=> {
     }
 }
 
-export default connect(mapStateToProps)(AddMovieForm);
+export default connect(mapStateToProps, {addMovie})(AddMovieForm);
