@@ -5,8 +5,10 @@ import favoritesReducer from './favoritesReducer'
 
 
 
-const rootReducer = combineReducers(
+const rootReducer = combineReducers({
+
     movieReducer,
     favoritesReducer
-)
+})
+
 export default rootReducer;

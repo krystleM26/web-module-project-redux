@@ -1,13 +1,13 @@
 const initialState = {
-    favorites: [],
-displayFavorites:  true
+  favorites: [],
+  displayFavorites: true
 }
 
-const favoritesReducer = (state=initialState, action) => {
-    switch(action.type) {
+const favoritesReducer = (state = initialState, action) => {
+  switch (action.type) {
     default:
-        return (state);
-    }
+      return state
+  }
 }
 
-export default favoritesReducer;
+export default favoritesReducer
