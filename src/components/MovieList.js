@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import movieReducer from '../reducers';
 
+
 import MovieListItem from './MovieListItem';
 import MovieFooter from './MovieFooter';
 

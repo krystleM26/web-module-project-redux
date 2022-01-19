@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { addMovie } from './../actions/movieActions';
 import { connect } from 'react-redux';
 
+
 import { Link, useHistory } from 'react-router-dom';
 
 const AddMovieForm = (props) => {
     const { push } = useHistory();
+   
+
 
     const [movie, setMovie] = useState({
         title: "",
@@ -23,7 +26,11 @@ const AddMovieForm = (props) => {
     }
 
     const handleSubmit = (e) => {
+        e.preventDefault()
+        addMovie(movie);
+        push('/movies')
     }
+
 
     const { title, director, genre, metascore, description } = movie;
     return(<div className="col">
@@ -67,4 +74,10 @@ const AddMovieForm = (props) => {
     </div>);
 }
 
-export default AddMovieForm;
+const mapStateToProps= (state)=> {
+    return {
+        movies: state.movies
+    }
+}
+
+export default connect(mapStateToProps)(AddMovieForm);
